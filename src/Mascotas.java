@@ -39,9 +39,10 @@ public class Mascotas {
     }
 
     // METODO
-    public void mostrarInfo(){
-        System.out.println("- Nombre: " + this.nombre);
-        System.out.println("- Especie: " + this.especie);
-        System.out.println("- Raza: " + this.raza);
+    public String mostrarInfo(){
+        return "Datos mascota: \n"
+                + "- Nombre: " + this.nombre + "\n"
+                + "- Especie: " + this.especie + "\n"
+                + "- Raza: " + this.raza + "\n";
     }
 }

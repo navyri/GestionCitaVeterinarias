@@ -12,10 +12,11 @@ public class Duenios extends Personas {
 
     // METODO (POLIMORFISMO)
     @Override
-    public void mostrarInfo(){
-        System.out.println("- Nombre: " + this.nombre);
-        System.out.println("- Email: " + this.email);
-        System.out.println("- Telefono: " + this.telefono);
+    public String mostrarInfo(){
+        return "Datos dueñ@: \n"
+                + "- Nombre: " + this.nombre + "\n"
+                + "- Email: " + this.email + "\n"
+                + "- Teléfono: " + this.telefono + "\n";
     }
 
 }

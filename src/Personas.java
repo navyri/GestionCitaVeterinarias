@@ -8,8 +8,8 @@ public class Personas {
     }
 
     // METODO
-    public void mostrarInfo(){
-        System.out.printf("Mi nombre es: " + this.nombre);
+    public String mostrarInfo(){
+        return "Mi nombre es: " + this.nombre;
     }
 
 }

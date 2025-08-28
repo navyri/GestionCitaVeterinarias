@@ -4,7 +4,7 @@ import java.util.List;
 public class Facturas {
 
     private double costoBase;
-    private List<ItemsFactura> items;
+    private List<ItemsFacturas> items;
 
     // CONSTRUCTOR
     public Facturas() {
@@ -17,7 +17,7 @@ public class Facturas {
         return this.costoBase;
     }
 
-    public void agregarItem(ItemsFactura item){
+    public void agregarItem(ItemsFacturas item){
         this.items.add(item);
     }
 }
