@@ -9,7 +9,7 @@ public class Facturas {
 
     // CONSTRUCTOR
     public Facturas() {
-        this.costoBase = 3000;
+        this.costoBase = 30000;
         this.items = new ArrayList<>();
     }
 
@@ -30,12 +30,36 @@ public class Facturas {
         return total;
     }
 
-    public void mostrarDetalleFactura(){
-        String mensaje = "\n";
-        for (ItemsFacturas item : items){
-            mensaje += item.mostrarDetalle();
+    public void mostrarDetalleFactura() {
+        String medicamentos = "";
+        String servicios = "";
+
+        double subtotalMedicamentos = 0;
+        double subtotalServicios = 0;
+
+        for (ItemsFacturas item : items) {
+            if (item instanceof Medicamentos) {
+                medicamentos += "- " + item.mostrarDetalle() + "\n";
+                subtotalMedicamentos += item.calcularSubtotal();
+            } else if (item instanceof Servicios) {
+                servicios += "- " + item.mostrarDetalle() + "\n";
+                subtotalServicios += item.calcularSubtotal();
+            }
         }
+
+        double total = this.costoBase + subtotalMedicamentos + subtotalServicios;
+
+        String mensaje = "Medicamentos:\n" + medicamentos +
+                "Subtotal medicamentos: $" + subtotalMedicamentos + "\n\n" +
+                "Servicios:\n" + servicios +
+                "Subtotal servicios: $" + subtotalServicios + "\n\n" +
+                "Costo base de la cita: $" + this.costoBase + "\n\n" +
+                "TOTAL FACTURA: $" + total;
+
         JOptionPane.showMessageDialog(null, "RESUMEN DE LA FACTURA\n" + mensaje);
     }
+
+
+
 
 }

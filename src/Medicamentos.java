@@ -15,6 +15,8 @@ public class Medicamentos extends ItemsFacturas {
 
     @Override
     public String mostrarDetalle() {
-        return "El medicamento " + this.nombre + " esta recetado en una cantidad de: " + this.cantidad + " por un costo de $" + this.costo;
+        return this.nombre +
+                " x" + this.cantidad +
+                " | Precio unitario: $" + this.costo;
     }
 }

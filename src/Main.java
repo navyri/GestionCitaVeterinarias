@@ -14,23 +14,38 @@ public class Main {
 
             if (bandera == 1) {
                 JOptionPane.showMessageDialog(null,"Hasta la proxima!");
+
             } else {
+
+                // DATOS DUEÑO MASCOTA
                 String nombre, telefono, email;
                 nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del dueño de la mascota");
                 telefono = JOptionPane.showInputDialog(null, "Ingrese el telefono del dueño de la mascota");
                 email = JOptionPane.showInputDialog(null, "Ingrese el correo del dueño de la mascota");
+                Duenios objDuenio = new Duenios(nombre, email, telefono);
 
-                Duenios objDuenio = new Duenios("Mary", "mary@gmail.com", "12345678");
-                Mascotas objMascota = new Mascotas("Tinta", "Gato", "Criollo");
-                Veterinarios objVeterinario = new Veterinarios("Malenia", "Cirujana");
+                // DATOS MASCOTA
+                String nombreMascota, especieMascota, razaMascota;
+                nombreMascota = JOptionPane.showInputDialog(null, "Ingrese el nombre de la mascota");
+                especieMascota = JOptionPane.showInputDialog(null, "Ingrese la especie de la mascota");
+                razaMascota = JOptionPane.showInputDialog(null, "Ingrese la raza de la mascota");
+                Mascotas objMascota = new Mascotas(nombreMascota, especieMascota, razaMascota);
 
-                Citas objCita = new Citas("28/08/2025","7:03 am", "Revision", objDuenio, objMascota, objVeterinario);
+                // DATOS VETERINARIO
+                Veterinarios objVeterinario = new Veterinarios("Malenia", "Medica Veterinaria");
+
+                // DATOS CITA
+                String fechaCita, horaCita, motivoCita;
+                fechaCita = JOptionPane.showInputDialog(null, "Ingrese la fecha de la cita a asignar");
+                horaCita  = JOptionPane.showInputDialog(null, "Ingrese la hora de la cita a asignar");
+                motivoCita = JOptionPane.showInputDialog(null, "Ingrese el motivo de la cita a asignar");
+                Citas objCita = new Citas(fechaCita,horaCita, motivoCita, objDuenio, objMascota, objVeterinario);
                 objCita.mostrarCitaInfo();
 
+                // RESUMEN DE LA FACTURA
                 Facturas facturas = objCita.getFactura();
-
+                // Medicamentos de la factura
                 int cantidadMedicamentos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de medicamentos"));
-
                 for (int i = 0; i < cantidadMedicamentos; i++){
                     String nombreMedicamento = JOptionPane.showInputDialog("Ingrese el nombre del medicamento");
                     double precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio del medicamento"));
@@ -38,14 +53,20 @@ public class Main {
 
                     facturas.agregarItem(new Medicamentos(nombreMedicamento, precio, cantidad));
                 }
+                // Servicios de la factura
+                int cantidadServicios = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de servicios"));
+                for (int i = 0; i < cantidadServicios; i++) {
+                    String nombreServicio = JOptionPane.showInputDialog("Ingrese el nombre del servicio");
+                    double costoServicio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el costo del servicio"));
+
+                    facturas.agregarItem(new Servicios(nombreServicio, costoServicio));
+                }
 
                 JOptionPane.showMessageDialog(null, objCita.mostrarCitaInfo());
                 facturas.mostrarDetalleFactura();
             }
 
         } while (bandera == 0);
-
-
 
     }
 }
