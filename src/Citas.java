@@ -25,13 +25,6 @@ public class Citas {
     }
 
     public String mostrarCitaInfo(){
-/*        System.out.println("INFORMACION DE LA CITA:");
-        System.out.println("- Fecha: " + this.fecha);
-        System.out.println("- Hora: " + this.hora);
-        System.out.println("- Motivo: " + this.motivo);
-        duenios.mostrarInfo();
-        mascotas.mostrarInfo();
-        veterinarios.mostrarInfo(); */
         return "INFORMACION DE LA CITA:\n"
                 + "- Fecha: " + this.fecha + "\n"
                 + "- Hora: " + this.hora + "\n"
