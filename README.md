@@ -8,7 +8,7 @@
 </p>
 <p align='center'>
     <img
-        src="https://readme-typing-svg.demolab.com/?font=Iosevka&size=16&pause=1000&color=FFFFFF&center=true&vCenter=true&width=435&lines=Ejemplo+de+salida!" alt="Typing SVG"
+        src="https://readme-typing-svg.demolab.com/?font=Iosevka&size=16&pause=1000&color=FFFFFF&center=true&vCenter=true&width=435&lines=Ejemplo+de+salida+del+proyecto!" alt="Typing SVG"
     />
     <img 
         src="https://capsule-render.vercel.app/api?type=rect&height=5&color=80354A&reversal=false&fontAlignY=40&fontColor=FFFFFF&fontSize=60"
